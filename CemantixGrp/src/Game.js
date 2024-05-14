@@ -2,8 +2,16 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Game() {
+    const navigation = useNavigation();
+
+    // Fonction pour naviguer vers une autre page
+    const handleStartHomePress = () => {
+        navigation.navigate('Home');
+    };
+
   return (
     <View style={styles.body}>
       <View style={styles.nav}>
@@ -34,7 +42,7 @@ export default function Game() {
       </View>
 
       <View style={styles.returnButtonContainer}>
-        <TouchableOpacity style={styles.returnButton}>
+        <TouchableOpacity style={styles.returnButton} onPress={handleStartHomePress}>
           <Text>Retour à l'accueil</Text>
         </TouchableOpacity>
       </View>
