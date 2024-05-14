@@ -1,0 +1,113 @@
+body {
+    background-color: #1F1F1F;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/** NavBar */
+
+.nav {
+    height: 20vh;
+}
+
+.navItemsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 20px;
+    height: 50%;
+}
+
+.navItem {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDD604;
+    color: #1F1F1F;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.navLogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/** Search */
+
+section {
+    height: 50vh;
+}
+
+.searchContainer {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    margin: 50px 0 0 0;
+}
+
+.searchInput {
+    width: 50%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+
+.searchButton {
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    padding: 0 20px;
+    background-color: #FDD604;
+    color: #1F1F1F;
+    cursor: pointer;
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/** Return Button */
+
+.returnButtonContainer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.returnButton {
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 60%;
+    padding: 0 20px;
+    background-color: #FDD604;
+    color: #1F1F1F;
+    cursor: pointer;
+}
