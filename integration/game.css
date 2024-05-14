@@ -98,14 +98,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .returnButton {
     border: none;
     border-radius: 10px;
-    height: 30px;
-    width: 50%;
+    height: 50px;
+    width: 60%;
     padding: 0 20px;
     background-color: #FDD604;
     color: #1F1F1F;
