@@ -5,19 +5,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.5, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
     // Load the texture (logo)
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('img/logo.png');
+    const texture = loader.load('img/logoBlanc.png');
 
-    // Create a cube with the logo texture on all faces
+    // Create materials for each face with white background and the logo texture
+    const materials = [];
+    for (let i = 0; i < 6; i++) {
+        materials.push(new THREE.MeshBasicMaterial({
+            map: texture,
+            color: 0xffffff, // White background color
+            opacity: 1
+        }));
+    }
+
+    // Create a cube with the materials
     const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ map: texture });
-    const cube = new THREE.Mesh(geometry, material);
+    const cube = new THREE.Mesh(geometry, materials);
     scene.add(cube);
 
     camera.position.z = 5;
@@ -31,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     animate();
 
-    // // Redirect after 3 seconds
-    // setTimeout(function () {
-    //     window.location.href = 'home.html';
-    // }, 3000);
+    // Redirect after 3 seconds (if needed)
+    setTimeout(function () {
+        window.location.href = 'home.html';
+    }, 3000);
 });
