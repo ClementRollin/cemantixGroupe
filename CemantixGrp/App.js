@@ -13,7 +13,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Loading" component={Loading} options={{ headerShown: false}} />
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-        <Stack.Screen name="Home" component={Game} options={{headerShown: false}}/>
+        <Stack.Screen name="Game" component={Game} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
