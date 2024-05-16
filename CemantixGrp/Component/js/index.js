@@ -1,6 +1,5 @@
 import * as THREE from 'three';
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function Animation3D() {
     const container = document.getElementById('container');
 
     // Set up the scene, camera, and renderer
@@ -45,3 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'home.html';
     }, 3000);
 });
+
+export function Animation() {
+    Animation3D();
+}
