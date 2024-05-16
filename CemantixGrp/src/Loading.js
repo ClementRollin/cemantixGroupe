@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Dimensions, StyleSheet } from 'react-native';
-import  GLView from 'expo-gl';
+import { GLView } from 'expo-gl';
 import { Asset } from 'expo-asset';
 import { Renderer, TextureLoader } from 'expo-three';
 import * as THREE from 'three';
+import { useNavigation } from '@react-navigation/native';
  
-const Loading = () => {
-  const { width, height } = Dimensions.get('window');
+export default function Loading() {
+  const { width, height } = Dimensions.get('window');  
+  const navigation = useNavigation(); // Initialisation de la navigation
  
   const onContextCreate = async (gl) => {
     const { drawingBufferWidth: renderWidth, drawingBufferHeight: renderHeight } = gl;
@@ -18,6 +20,10 @@ const Loading = () => {
     await asset.downloadAsync();
     const texture = new TextureLoader().load(asset.localUri);
  
+    setTimeout(() => {
+      navigation.navigate('Home'); // Redirection vers l'écran Home
+    }, 4000); // Attendre 4 secondes avant de changer d'écran
+
     const materials = [];
     for (let i = 0; i < 6; i++) {
         materials.push(new THREE.MeshBasicMaterial({
@@ -61,5 +67,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
 });
- 
-export default Loading;
